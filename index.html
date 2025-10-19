@@ -56,12 +56,14 @@
             background: rgba(255, 255, 255, 0.95);
         }
         
-        @media (max-width: 768px) {
-            .timeline-item::before {
-                left: 20px;
+        @media (max-width: 640px) {
+           #siswa-grid {
+            max-height: 800px; /* batas tinggi di HP */
+            overflow-y: auto;  /* biar muncul scroll di dalamnya */
+            padding-right: 5px; /* biar gak nabrak scrollbar */
             }
-        }
-    </style>
+          }
+        </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
