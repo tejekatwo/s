@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEJEKATWO – XII TJKT 2 SMK Ma'arif Kota Mungkid</title>
+    <meta name="description" content="Website resmi kelas XII TJKT 2 SMK Ma'arif Kota Mungkid - Solidarity, Creativity, and Growth Together">
+    <meta name="keywords" content="TEJEKATWO, TJKT, SMK Ma'arif, jaringan komputer, website kelas">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, #60a5fa);
+        }
+        
+        .navbar-scroll {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        @media (max-width: 640px) {
+           #siswa-grid {
+            max-height: 800px; /* batas tinggi di HP */
+            overflow-y: auto;  /* biar muncul scroll di dalamnya */
+            padding-right: 5px; /* biar gak nabrak scrollbar */
+            }
+          }
+        </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg"></span>
+                    </div>
+                    <span class="font-bold text-xl text-gray-800">TEJEKATWO</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#berita" class="text-gray-700 hover:text-blue-600 transition-colors">Berita</a>
+                    <a href="#tentang" class="text-gray-700 hover:text-blue-600 transition-colors">Tentang</a>
+                    <a href="#siswa" class="text-gray-700 hover:text-blue-600 transition-colors">Siswa</a>
+                    <a href="#galeri" class="text-gray-700 hover:text-blue-600 transition-colors">Galeri</a>
+                    <a href="#kontak" class="text-gray-700 hover:text-blue-600 transition-colors">Kontak</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#berita" class="text-gray-700 hover:text-blue-600 transition-colors">Berita</a>
+                    <a href="#tentang" class="text-gray-700 hover:text-blue-600 transition-colors">Tentang</a>
+                    <a href="#siswa" class="text-gray-700 hover:text-blue-600 transition-colors">Siswa</a>
+                    <a href="#galeri" class="text-gray-700 hover:text-blue-600 transition-colors">Galeri</a>
+                    <a href="#kontak" class="text-gray-700 hover:text-blue-600 transition-colors">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-4">TEJEKATWO</h1>
+                    <h2 class="text-xl md:text-2xl mb-4 opacity-90">Kelas XII TJKT 2 – SMK Ma'arif Kota Mungkid</h2>
+                    <p class="text-lg mb-8 opacity-80">"Solidarity, Creativity, and Growth Together"</p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#tentang" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Profil Kelas
+                        </a>
+                        <a href="#berita" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                            Lihat Berita
+                        </a>
+                        <a href="#galeri" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                            Galeri Kegiatan
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
+                        <div class="w-full h-64 rounded-lg mb-6 overflow-hidden">
+                            <img src="images/banner_sambutan.jpg"
+                            alt="Banner Sambutan Wali Kelas"
+                            class="w-full h-full object-cover">
+                        </div>
+
+                        <h3 class="text-xl font-semibold mb-4">Sambutan Wali Kelas</h3>
+                        <p class="text-sm opacity-90 mb-4">
+                            "Selamat datang di website TEJEKATWO – XII TJKT 2. Semoga website ini menjadi wadah untuk berbagi informasi, dokumentasi kegiatan, dan mempererat tali silaturahmi antar siswa. Mari bersama-sama membangun masa depan yang cerah di bidang teknologi."
+                        </p>
+                        <div class="flex items-center space-x-3">
+                            <img src="images/wali_kelas.png" alt="Wali Kelas" class="w-12 h-12 rounded-full object-cover border-2 border-white/30">
+                            <div>
+                                <p class="font-semibold">Ibu Eka Wahyu Nurlaili, S.Pd.</p>
+                                <p class="text-sm opacity-75">Wali Kelas XII TJKT 2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Berita & Artikel -->
+    <section id="berita" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Berita & Artikel</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Update terbaru kegiatan kelas, pengalaman PKL, dan cerita inspiratif dari siswa TEJEKATWO</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-cogs text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-blue-600 mb-2">20 Oktober 2025 • Admin</div>
+                        <h3 class="text-xl font-semibold mb-3">Website TEJEKATWO dibuat</h3>
+                        <p class="text-gray-600 mb-4">Website TEJEKATWO sedang dibuat dan akan digunakan sebagai media dokumentasi dan informasi</p>
+                        <button class="text-blue-600 font-semibold hover:text-blue-800 transition-colors">Baca Selengkapnya →</button>
+                    </div>
+                </article>
+                
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-cogs text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-blue-600 mb-2">20 Oktober 2025 • Admin</div>
+                        <h3 class="text-xl font-semibold mb-3">Website TEJEKATWO dibuat</h3>
+                        <p class="text-gray-600 mb-4">Website TEJEKATWO sedang dibuat dan akan digunakan sebagai media dokumentasi dan informasi</p>
+                        <button class="text-blue-600 font-semibold hover:text-blue-800 transition-colors">Baca Selengkapnya →</button>
+                    </div>
+                </article>
+                
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-cogs text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-blue-600 mb-2">20 Oktober 2025 • Admin</div>
+                        <h3 class="text-xl font-semibold mb-3">Website TEJEKATWO dibuat</h3>
+                        <p class="text-gray-600 mb-4">Website TEJEKATWO sedang dibuat dan akan digunakan sebagai media dokumentasi dan informasi</p>
+                        <button class="text-blue-600 font-semibold hover:text-blue-800 transition-colors">Baca Selengkapnya →</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang TEJEKATWO -->
+    <section id="tentang" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Tentang TEJEKATWO</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Mengenal lebih dekat identitas dan semangat kelas XII TJKT 2</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Visi & Misi Kelas</h3>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-3">Visi</h4>
+                            <p class="text-gray-600">Menjadi kelas yang unggul, kreatif, dan berkarakter dalam bidang Teknik Komputer dan Jaringan dengan semangat solidaritas dan pertumbuhan bersama.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-600 mb-3">Misi</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                                    <span>Mengembangkan kompetensi di bidang jaringan komputer</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                                    <span>Membangun karakter disiplin dan profesional</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                                    <span>Menjalin solidaritas dan kerjasama tim</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-blue-600 text-white p-6 rounded-xl text-center">
+                            <i class="fas fa-graduation-cap text-3xl mb-3"></i>
+                            <h4 class="font-semibold mb-2">Disiplin</h4>
+                            <p class="text-sm opacity-90">Menjalankan tugas dengan tepat waktu dan bertanggung jawab</p>
+                        </div>
+                        
+                        <div class="bg-green-600 text-white p-6 rounded-xl text-center">
+                            <i class="fas fa-users text-3xl mb-3"></i>
+                            <h4 class="font-semibold mb-2">Solidaritas</h4>
+                            <p class="text-sm opacity-90">Saling mendukung dan membantu dalam setiap kegiatan</p>
+                        </div>
+                        
+                        <div class="bg-purple-600 text-white p-6 rounded-xl text-center">
+                            <i class="fas fa-briefcase text-3xl mb-3"></i>
+                            <h4 class="font-semibold mb-2">Profesionalitas</h4>
+                            <p class="text-sm opacity-90">Bekerja dengan standar industri yang tinggi</p>
+                        </div>
+                        
+                        <div class="bg-orange-600 text-white p-6 rounded-xl text-center">
+                            <i class="fas fa-lightbulb text-3xl mb-3"></i>
+                            <h4 class="font-semibold mb-2">Kreativitas</h4>
+                            <p class="text-sm opacity-90">Mengembangkan inovasi dalam teknologi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg mt-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">Teknik Jaringan Komputer dan Telekomunikasi (TJKT)</h4>
+                        <p class="text-gray-600">Jurusan yang membekali siswa dengan kemampuan instalasi, konfigurasi, dan maintenance sistem komputer serta jaringan. Lulusan TJKT siap bekerja sebagai teknisi IT, network administrator, atau melanjutkan ke perguruan tinggi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Struktur Kelas / Daftar Siswa -->
+    <section id="siswa" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Struktur Kelas & Daftar Siswa</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Keluarga besar TEJEKATWO dengan berbagai peran dan tanggung jawab</p>
+            </div>
+            
+            <!-- Struktur Organisasi -->
+            <div class="mb-16 fade-in">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Struktur Organisasi</h3>
+                <div class="max-w-4xl mx-auto">
+                    <!-- Wali Kelas -->
+                    <div class="text-center mb-8">
+                        <div class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold">
+                            Eka Wahyu Nurlaili, S.Pd.
+                        </div>
+                    </div>
+                    
+                    <!-- Ketua & Wakil -->
+                    <div class="flex justify-center gap-8 mb-8">
+                        <div class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold">
+                            Wildan Surya Anjuba
+                        </div>
+                        <div class="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold">
+                            Dea Rihadatul Hasna
+                        </div>
+                    </div>
+                    
+                    <!-- Pengurus Utama -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-purple-600 text-white px-4 py-2 rounded-lg text-center text-sm font-semibold">
+                            Asifa Aprilia
+                        </div>
+                        <div class="bg-purple-600 text-white px-4 py-2 rounded-lg text-center text-sm font-semibold">
+                            Putri Yulita Sari
+                        </div>
+                        <div class="bg-orange-600 text-white px-4 py-2 rounded-lg text-center text-sm font-semibold">
+                            Ana Habib Khoirul Mawa
+                        </div>
+                        <div class="bg-orange-600 text-white px-4 py-2 rounded-lg text-center text-sm font-semibold">
+                            Isna Nurfadea
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Daftar Siswa -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="siswa-grid">
+                <!-- Siswa cards akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Kegiatan -->
+    <section id="galeri" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Galeri Kegiatan</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Dokumentasi foto dan video kegiatan TEJEKATWO</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/galeri/gerakjalan.jpg" 
+                             alt="Galeri" 
+                             class="w-full h-full object-cover">
+                    </div>
+
+                    <div class="p-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Gerak Jalan Kemerdekaan</h4>
+                        <p class="text-sm text-gray-600">Memeriahkan kemerdekaan Indonesia dengan mengikuti lomba gerak jalan</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/galeri/maulid.jpg" 
+                             alt="Galeri" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Pengajian Maulid Nabi</h4>
+                        <p class="text-sm text-gray-600">Mengikuti pengajian peringatan maulid nabi Muhammad saw. 1445H</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/galeri/kunjungan.jpg" 
+                             alt="Galeri" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Kunjungan Industri & wisata</h4>
+                        <p class="text-sm text-gray-600">Kunjungan industri ke Universitas Amikom Yogyakarta dan Wisata di Jawa Timur</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/galeri/hariguru.jpg" 
+                             alt="Galeri" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Hari Guru 2024</h4>
+                        <p class="text-sm text-gray-600">Hari guru tahun 2024</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/galeri/gelarkarya.jpg" 
+                             alt="Galeri" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Gelar Karya</h4>
+                        <p class="text-sm text-gray-600">Mengikuti gelar karya dengan menampilkan drama Doraemon dari Jepang</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/galeri/fotoalbum.jpg" 
+                             alt="Galeri" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Foto Yearbook</h4>
+                        <p class="text-sm text-gray-600">Melakukan sesi pemotretan untuk buku tahunan angkatan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyek & Karya Siswa -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Proyek & Karya Siswa</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Showcase hasil karya dan proyek terbaik dari siswa TEJEKATWO</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-globe text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3">Website E-Commerce</h4>
+                        <p class="text-gray-600 mb-4">Platform jual beli online dengan fitur lengkap menggunakan PHP dan MySQL</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-blue-600 font-semibold">Proyek PKL</span>
+                            <button class="text-blue-600 hover:text-blue-800 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                        <i class="fas fa-server text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3">Konfigurasi Server</h4>
+                        <p class="text-gray-600 mb-4">Setup dan konfigurasi web server, database server, dan file server</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-green-600 font-semibold">Tugas Praktik</span>
+                            <button class="text-green-600 hover:text-green-800 transition-colors">
+                                <i class="fas fa-file-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-3">Aplikasi Mobile</h4>
+                        <p class="text-gray-600 mb-4">Aplikasi Android untuk monitoring jaringan dan sistem komputer</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-orange-600 font-semibold">Proyek P5</span>
+                            <button class="text-orange-600 hover:text-orange-800 transition-colors">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Kegiatan -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Linimasa Kegiatan</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Perjalanan kelas XII TJKT 2 selama satu jenjang akademik</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative timeline-item">
+                    <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover fade-in">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-calendar-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Juli 2023</h4>
+                                    <p class="text-sm text-gray-600">Awal Terbentuk</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">Pembentukan kelas, pemilihan pengurus, dan orientasi jurusan TJKT</p>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                        <div class="hidden md:block"></div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover fade-in">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-briefcase text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Juli 2024</h4>
+                                    <p class="text-sm text-gray-600">Naik ke kelas XI</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">Perjalanan berlanjut ke tingkat yang lebih tinggi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover fade-in">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-project-diagram text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Januari 2025</h4>
+                                    <p class="text-sm text-gray-600">PKL</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">Praktik Kerja Lapangan di berbagai perusahaan dan instansi</p>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                        <div class="hidden md:block"></div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover fade-in">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-graduation-cap text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">November-Mei 2026</h4>
+                                    <p class="text-sm text-gray-600">Ujian & Proyek Akhir</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">TKA, ujian praktik, ujian sekolah, dan presentasi proyek akhir jenjang</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover fade-in">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-heart text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Juni 2026</h4>
+                                    <p class="text-sm text-gray-600">Kelulusan</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">Wisuda, perpisahan, dan perayaan kelulusan TEJEKATWO</p>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Terhubung dengan TEJEKATWO melalui berbagai platform</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Email</h4>
+                    <p class="text-gray-600 text-sm">tejekatwo@smkmaarif.sch.id</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-instagram text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Instagram</h4>
+                    <p class="text-gray-600 text-sm">@tejekatwo.26</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-tiktok text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">TikTok</h4>
+                    <p class="text-gray-600 text-sm">@tjkt.2.archive</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Lokasi</h4>
+                    <p class="text-gray-600 text-sm">SMK Ma'arif Kota Mungkid</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gray-100 rounded-2xl p-8 fade-in">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">SMK Ma'arif Kota Mungkid</h3>
+                    <p class="text-gray-600 mb-6">Jl. Letnan Tukiyat, Kota Mungkid, Kabupaten Magelang, Jawa Tengah</p>
+                    <div class="w-full h-64 rounded-lg overflow-hidden">
+                        <iframe 
+                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.918432408089!2d110.20537827404623!3d-7.583857574925457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a8c43d18d2bb7%3A0xd0086e63e387dac7!2sSMK%20Ma&#39;arif%20Kota%20Mungkid!5e0!3m2!1sid!2sid!4v1760860917349!5m2!1sid!2sid"
+                             width="100%" height="100%" style="border:0;" 
+                             allowfullscreen="" loading="lazy" 
+                             referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg"></span>
+                        </div>
+                        <span class="font-bold text-xl">TEJEKATWO</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Kelas XII TJKT 2 SMK Ma'arif Kota Mungkid - Solidarity, Creativity, and Growth Together</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Link Cepat</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#tentang" class="text-gray-400 hover:text-white transition-colors">Tentang</a></li>
+                        <li><a href="#berita" class="text-gray-400 hover:text-white transition-colors">Berita</a></li>
+                        <li><a href="#galeri" class="text-gray-400 hover:text-white transition-colors">Galeri</a></li>
+                        <li><a href="#kontak" class="text-gray-400 hover:text-white transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Sosial Media</h4>
+                    <div class="flex space-x-4">
+                        <a href="http://www.instagram.com/tejekatwo.26" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="http://www.tiktok.com/@tjkt.2.archive" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="mailto:jekatwo.26" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Kontak</h4>
+                    <p class="text-gray-400 text-sm mb-2">tejekatwo@smkmaarif.sch.id</p>
+                    <p class="text-gray-400 text-sm">SMK Ma'arif Kota Mungkid</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2025 TEJEKATWO - XII TJKT 2 SMK Ma'arif Kota Mungkid. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 opacity-0 pointer-events-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Data siswa (contoh)
+        const siswaData = [
+            { nama: "Eka Wahyu Nurlaili, S.Pd.", jabatan: "WALI KELAS", instagram: "ekawn_44", foto: "bueka.jpg" },
+            { nama: "Wildan Surya Anjuba", jabatan: "KETUA", instagram: "_willthejustice", foto: "wildan.jpg" },
+            { nama: "Dea Rihadatul Hasna", jabatan: "WAKIL", instagram: "dearhsn_", foto: "hasna.jpg" },
+            { nama: "Asifa Aprilia", jabatan: "SEKRETARIS", instagram: "itsaprrll", foto: "april.jpg" },
+            { nama: "Putri Yulita Sari", jabatan: "SEKRETARIS", instagram: "clme.ylita", foto: "putri.jpg" },
+            { nama: "Ana Habib Khoirul Mawa", jabatan: "BENDAHARA", instagram: "nna.anaa0", foto: "ana.jpg" },
+            { nama: "Isna Nurfadea", jabatan: "BENDAHARA", instagram: "deyao.o", foto: "dea.jpg" },
+            { nama: "Octavia Theresya Rahmadhani", jabatan: "PEMBIASAAN", instagram: "taaavia_._", foto: "octa.jpg" },
+            { nama: "Rafi Maulana Aminudin", jabatan: "PEMBIASAAN", instagram: "opqrapiiii", foto: "rafi.jpg" },
+            { nama: "Nazuar Keisya Shafira", jabatan: "JURNAL", instagram: "nzrkesyaa__", foto: "keisya.jpg" },
+            { nama: "Janitra Hameed Al Khusen", jabatan: "DOKUMENTASI", instagram: "janitrahameed_", foto: "hameed.jpg" },
+            { nama: "Adam Aqil Nugroho", jabatan: "KEAMANAN", instagram: "sh1kigamiii", foto: "adam.jpg" },
+            { nama: "Rizki Adi Setiawan", jabatan: "KEAMANAN", instagram: "_rizki_adi", foto: "rizki.jpg" },
+            { nama: "Alien Syifani", jabatan: "EVENT", instagram: "alinnsyfni", foto: "alien.jpg" },
+            { nama: "Dila Septy Ramadhani", jabatan: "EVENT", instagram: "dila.septy", foto: "dila.jpg" },
+            { nama: "Faris Ari Fiandani", jabatan: "EVENT", instagram: "fariz_fian", foto: "faris.jpg" },
+            { nama: "Mirzatanta Raihajalu Akmadea", jabatan: "EVENT", instagram: "mindof.freiza", foto: "mirza.jpg" },
+            { nama: "Yunia Rahmayanti", jabatan: "INFAQ", instagram: "0niiaaa", foto: "nia.jpg" },
+            { nama: "Muhammad Latif Ahsan Jauhari", jabatan: "PAIBPNU", instagram: "latifhsn_", foto: "latif.png" },
+            { nama: "Rifda Wahyuni", jabatan: "PP", instagram: "its.rpda", foto: "rifda.jpg" },
+            { nama: "Nabila Citra Maharani", jabatan: "B. INDONESIA", instagram: "bllaywo", foto: "bila.jpg" },
+            { nama: "Heri Setiawan", jabatan: "PJOK", instagram: "herisetiaawan_", foto: "heri.jpg" },
+            { nama: "Safamia Putri", jabatan: "SEJARAH", instagram: "putrissymm_", foto: "safa.jpg" },
+            { nama: "Najwa Fitri Oktavia", jabatan: "B. JAWA", instagram: "n.wwaa__", foto: "najwa.jpg" },
+            { nama: "Suci Nurhidayati", jabatan: "MATEMATIKA", instagram: "uci4li", foto: "suci.jpg" },
+            { nama: "Selly Novita Sari", jabatan: "B. INGGRIS", instagram: "sellynvtaasrr", foto: "selly.jpg" },
+            { nama: "Akhmad Riyadi Satria Al Madani", jabatan: "PKK", instagram: "akhmadriyadi_12", foto: "yadi.jpg" },
+            { nama: "Aditya Khoirul Arifin", jabatan: "KK", instagram: "aadhitz_", foto: "adit.jpg" },
+            { nama: "Muhammad Faqih Fatkhur Rohman", jabatan: "PRAKTIK", instagram: "fqh.fatkhurr", foto: "faqih.jpg" },
+            { nama: "Muhamad Rizqi Ristiawan", jabatan: "PK & P5", instagram: "wwnrzqii", foto: "wawan.jpg" },
+            { nama: "Muhammad Alivian Saputra", jabatan: "PK & P5", instagram: "vian_ssd.nvme", foto: "vian.jpg" },
+            { nama: "Shihabbuddiin Abdul Fadhiil Ahmad Husaiin", jabatan: "Kebersihan", instagram: "kiraquiin", foto: "shihab.jpg" },
+            { nama: "Umi Sumaryani", jabatan: "Kebersihan", instagram: "umisukaanakkecill", foto: "umi.jpg" },
+            { nama: "Muhammad Yusril Ilham", jabatan: "Kebersihan", instagram: "yusrililhamm", foto: "yusril.jpg" },
+            { nama: "Fatma Maulidya", jabatan: "Kebersihan", instagram: "ftmldya", foto: "fatma.jpg" },
+            { nama: "Aulia Indra Pratiwi", jabatan: "Kebersihan", instagram: "tiwinihh", foto: "aulia.jpg" }
+        ];
+
+        // Render siswa cards
+        function renderSiswa() {
+            const siswaGrid = document.getElementById('siswa-grid');
+            siswaGrid.innerHTML = '';
+
+            siswaData.forEach((siswa, index) => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in';
+
+        // jika foto ada → tampilkan <img>, kalau kosong → tampilkan icon user
+            const fotoSection = siswa.foto
+                ? `<div class="h-48 overflow-hidden">
+                   <img src="images/siswa/${siswa.foto}" 
+                        alt="${siswa.nama}" 
+                        class="w-full h-full object-cover">
+               </div>`
+                : `<div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                   <i class="fas fa-user text-5xl text-white"></i>
+               </div>`;
+
+        card.innerHTML = `
+            ${fotoSection}
+            <div class="p-4">
+                <h4 class="font-semibold text-gray-800 mb-1">${siswa.nama}</h4>
+                <p class="text-sm text-blue-600 font-medium mb-3">${siswa.jabatan}</p>
+                <a href="https://instagram.com/${siswa.instagram}" 
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center space-x-2 text-pink-600 hover:text-pink-800 transition-colors">
+                    <i class="fab fa-instagram"></i>
+                    <span class="text-sm">@${siswa.instagram}</span>
+                </a>
+            </div>
+        `;
+
+        siswaGrid.appendChild(card);
+    });
+}
+
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+            
+            // Render siswa data
+            renderSiswa();
+            
+            // Re-observe newly created elements
+            setTimeout(() => {
+                const newFadeElements = document.querySelectorAll('.fade-in:not(.visible)');
+                newFadeElements.forEach(el => observer.observe(el));
+            }, 100);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-scroll');
+            } else {
+                navbar.classList.remove('navbar-scroll');
+            }
+            
+            // Back to top button
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                backToTop.classList.add('opacity-100');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+                backToTop.classList.remove('opacity-100');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'990c5061c748ec19',t:'MTc2MDgzNTM2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
