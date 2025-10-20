@@ -706,7 +706,7 @@
             { nama: "Faris Ari Fiandani", jabatan: "EVENT", instagram: "fariz_fian", foto: "faris.jpg" },
             { nama: "Mirzatanta Raihajalu Akmadea", jabatan: "EVENT", instagram: "mindof.freiza", foto: "mirza.jpg" },
             { nama: "Yunia Rahmayanti", jabatan: "INFAQ", instagram: "0niiaaa", foto: "nia.jpg" },
-            { nama: "Muhammad Latif Ahsan Jauhari", jabatan: "PAIBPNU", instagram: "latifhsn_", foto: "latif.png" },
+            { nama: "Muhammad Latif Ahsan Jauhari", jabatan: "PAIBPNU", instagram: "latifhsn_", foto: "latif.png", portofolio: "https://latifjauhari04.github.io/latifahsan" },
             { nama: "Rifda Wahyuni", jabatan: "PP", instagram: "its.rpda", foto: "rifda.jpg" },
             { nama: "Nabila Citra Maharani", jabatan: "B. INDONESIA", instagram: "bllaywo", foto: "bila.jpg" },
             { nama: "Heri Setiawan", jabatan: "PJOK", instagram: "herisetiaawan_", foto: "heri.jpg" },
@@ -749,7 +749,11 @@
         card.innerHTML = `
             ${fotoSection}
             <div class="p-4">
-                <h4 class="font-semibold text-gray-800 mb-1">${siswa.nama}</h4>
+                <h4 class="font-semibold text-gray-800 mb-1">
+                      ${siswa.portfolio 
+                      ? `<a href="${siswa.portfolio}" target="_blank" class="hover:text-blue-600 underline">${siswa.nama}</a>` 
+                      : siswa.nama}
+                </h4>
                 <p class="text-sm text-blue-600 font-medium mb-3">${siswa.jabatan}</p>
                 <a href="https://instagram.com/${siswa.instagram}" 
                    target="_blank" rel="noopener noreferrer"
