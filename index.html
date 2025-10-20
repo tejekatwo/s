@@ -71,10 +71,10 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-lg"></span>
+                    <div class="w-40 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">TEJEKATWO</span>
                     </div>
-                    <span class="font-bold text-xl text-gray-800">TEJEKATWO</span>
+                    <span class="font-bold text-xl text-gray-800"></span>
                 </div>
                 
                 <div class="hidden md:flex space-x-8">
@@ -142,7 +142,7 @@
                         <div class="flex items-center space-x-3">
                             <img src="images/wali_kelas.png" alt="Wali Kelas" class="w-12 h-12 rounded-full object-cover border-2 border-white/30">
                             <div>
-                                <p class="font-semibold">Ibu Eka Wahyu Nurlaili, S.Pd.</p>
+                                <p class="font-semibold">Eka Wahyu Nurlaili, S.Pd.</p>
                                 <p class="text-sm opacity-75">Wali Kelas XII TJKT 2</p>
                             </div>
                         </div>
@@ -661,7 +661,7 @@
                         <a href="http://www.tiktok.com/@tjkt.2.archive" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
                             <i class="fab fa-tiktok"></i>
                         </a>
-                        <a href="mailto:jekatwo.26" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                        <a href="mailto:tejekatwo26" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
@@ -698,7 +698,7 @@
             { nama: "Octavia Theresya Rahmadhani", jabatan: "PEMBIASAAN", instagram: "taaavia_._", foto: "octa.jpg" },
             { nama: "Rafi Maulana Aminudin", jabatan: "PEMBIASAAN", instagram: "opqrapiiii", foto: "rafi.jpg" },
             { nama: "Nazuar Keisya Shafira", jabatan: "JURNAL", instagram: "nzrkesyaa__", foto: "keisya.jpg" },
-            { nama: "Janitra Hameed Al Khusen", jabatan: "DOKUMENTASI", instagram: "janitrahameed_", foto: "hameed.jpg" },
+            { nama: "Janitra Hameed Al Khusen", jabatan: "DOKUMENTASI", instagram: "janitrahameed_", foto: "hameed.jpg", portfolio: "https://sites.google.com/view/janitrahameed" },
             { nama: "Adam Aqil Nugroho", jabatan: "KEAMANAN", instagram: "sh1kigamiii", foto: "adam.jpg" },
             { nama: "Rizki Adi Setiawan", jabatan: "KEAMANAN", instagram: "_rizki_adi", foto: "rizki.jpg" },
             { nama: "Alien Syifani", jabatan: "EVENT", instagram: "alinnsyfni", foto: "alien.jpg" },
@@ -706,7 +706,7 @@
             { nama: "Faris Ari Fiandani", jabatan: "EVENT", instagram: "fariz_fian", foto: "faris.jpg" },
             { nama: "Mirzatanta Raihajalu Akmadea", jabatan: "EVENT", instagram: "mindof.freiza", foto: "mirza.jpg" },
             { nama: "Yunia Rahmayanti", jabatan: "INFAQ", instagram: "0niiaaa", foto: "nia.jpg" },
-            { nama: "Muhammad Latif Ahsan Jauhari", jabatan: "PAIBPNU", instagram: "latifhsn_", foto: "latif.png", portofolio: "https://latifjauhari04.github.io/latifahsan" },
+            { nama: "Muhammad Latif Ahsan Jauhari", jabatan: "PAIBPNU", instagram: "latifhsn_", foto: "latif.png", portfolio: "https://latifahsan.github.io/0" },
             { nama: "Rifda Wahyuni", jabatan: "PP", instagram: "its.rpda", foto: "rifda.jpg" },
             { nama: "Nabila Citra Maharani", jabatan: "B. INDONESIA", instagram: "bllaywo", foto: "bila.jpg" },
             { nama: "Heri Setiawan", jabatan: "PJOK", instagram: "herisetiaawan_", foto: "heri.jpg" },
@@ -751,7 +751,7 @@
             <div class="p-4">
                 <h4 class="font-semibold text-gray-800 mb-1">
                       ${siswa.portfolio 
-                      ? `<a href="${siswa.portfolio}" target="_blank" class="hover:text-blue-600 underline">${siswa.nama}</a>` 
+                      ? `<a href="${siswa.portfolio}" target="_blank" class="hover:text-blue-600 no-underline">${siswa.nama}</a>` 
                       : siswa.nama}
                 </h4>
                 <p class="text-sm text-blue-600 font-medium mb-3">${siswa.jabatan}</p>
